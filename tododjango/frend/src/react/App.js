@@ -2,7 +2,7 @@ import React, {useEffect} from 'react';
 import TodoForm from './components/todoform.js';
 import List from './components/list.js'
 import { connect } from "react-redux";
-import { getTodoRequest, addTodo, deleteTodo, handleCompleted } from "../redux/actions/todo-actions";
+import { deleteTodoRequest, getTodoRequest, addTodoRequest, setTodoIsCompletedRequest } from "../redux/requests/todo-requests";
 
 
 const App = (props) => {
@@ -12,8 +12,8 @@ const App = (props) => {
 
         return(
             <div className="main-container">
-                    <TodoForm addTodo={props.addTodo}/>
-                    <List todos={props.todos} deleteTodo={props.deleteTodo} handleCompleted={props.handleCompleted} />
+                    <TodoForm addTodoRequest={props.addTodoRequest}/>
+                    <List todos={props.todos} deleteTodoRequest={props.deleteTodoRequest} setTodoIsCompletedRequest={props.setTodoIsCompletedRequest} />
             </div> 
         )
     }
@@ -24,8 +24,8 @@ export default connect(
     }), 
     dispatch => ({
     getTodoRequest: () => dispatch(getTodoRequest()),
-    addTodo: (todo) => dispatch(addTodo(todo)),
-    deleteTodo: (key) => dispatch(deleteTodo(key)),
-    handleCompleted: (id) => dispatch(handleCompleted(id))
+    deleteTodoRequest: (id) => dispatch(deleteTodoRequest(id)),
+    addTodoRequest: (todo) => dispatch(addTodoRequest(todo)),
+    setTodoIsCompletedRequest: (id, isCompleted) => dispatch(setTodoIsCompletedRequest(id, isCompleted))
     })
 )(App);

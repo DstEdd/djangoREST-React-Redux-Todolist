@@ -1,3 +1,81 @@
 body{
-    background-color: brown;
+    background-color: #141A26;
+    color: #fff;
+}
+
+body *{
+    font-family: Ubuntu;
+}
+
+.add-form{
+    text-align: center;
+}
+
+.add-form input{
+    width: 50%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border-width: 0px;
+    font-size: 16px;
+    border-radius: 10px 0px 0px 10px;
+    outline: none;
+}
+
+.add-form button{
+    background-color: #275e3c;
+    border: none;
+    color: white;
+    cursor: pointer;
+    padding: 12px 20px;
+    font-size: 16px;
+    margin: 4px 0px;
+    border-radius: 0px 10px 10px 0px;
+    outline: none;
+}
+
+.todo-list{
+    justify-content: center;
+    list-style-type: none;
+    margin: auto;
+    width: 70%;
+    padding-inline-start: 0px;
+}
+
+.todo-list li {
+    margin: auto;
+    border-bottom: 1px solid #275e3c;
+    margin-top: -1px;
+    padding: 12px;
+    text-decoration: none;
+    font-size: 20px;
+    color: white;
+    display: block;
+    position: relative;
+}
+
+.todo-list li span, s{
+    padding-left: 10px;
+    text-decoration-color: #275e3c; 
+}
+
+.todo-list button {
+    background-color: #275e3c;
+    border: none;
+    color: white;
+    padding: 10px 32px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    position: absolute;
+    top: 0%;
+    right: 0%;
+    outline: none;
+}
+
+.no-todos{
+    text-align: center;
+    font-size: 30px;
 }

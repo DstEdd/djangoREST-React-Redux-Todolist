@@ -1,12 +1,4 @@
-import axios from 'axios';
 import * as types from './action-types';
-
-export const getTodoRequest = () => dispatch =>{
-  axios.get('http://localhost:8000/api/todos')
-    .then(res =>{
-      dispatch(getTodos(res.data));
-    })
-}
 
 export function getTodos(todos){
   return {
@@ -22,10 +14,10 @@ export function addTodo(todo){
     };
 }
 
-export function deleteTodo(key){
+export function deleteTodo(id){
   return {
         type: types.DELETE_TODO,
-        key
+        id
     };
 }
 
